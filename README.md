@@ -1,10 +1,10 @@
-use
+
 # NLDAS
 
 <!-- badges: start -->
 <!-- badges: end -->ins
 
-The goal of NLDAS is to ...
+The goal of NLDAS is to query NLDAS data rods. 
 
 ## Installation
 
