@@ -11,7 +11,7 @@ The goal of NLDAS is to ...
 You can install the released version of NLDAS from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
-install.packages("NLDAS")
+devtools::install.github("benjamincrary/NLDAS")
 ```
 
 ## Example
@@ -20,6 +20,7 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(NLDAS)
-## basic example code
+## get_nldas_from_shp(path_to_shapefile, startdate, enddate, nldas_parameters, destination)
+get_nldas_from_shp("Data/HSPF_BlueRiverWatershed.shp", "2019-05-28", "2019-05-28", "APCPsfc", "Output/")
 ```
 
