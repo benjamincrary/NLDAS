@@ -4,10 +4,10 @@
 \alias{create_zone_map}
 \title{create zone map}
 \usage{
-create_zone_map(path_to_shapefile, zone_field)
+create_zone_map(zone_weight)
 }
 \arguments{
-\item{point_cloud}{}
+\item{zone_weight}{}
 }
 \value{
 

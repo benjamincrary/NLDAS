@@ -4,7 +4,7 @@
 \alias{output_zone_map}
 \title{Title}
 \usage{
-output_zone_map(zone_map, variable, destination)
+output_zone_map(zone_map, zone_weight, parameter, destination)
 }
 \arguments{
 \item{destination}{}
