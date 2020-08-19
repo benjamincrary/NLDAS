@@ -1,0 +1,65 @@
+Metadata of the Time Series file:
+
+prod_name=NLDAS_FORA0125_H.002
+param_short_name=APCPsfc
+param_name=Precipitation hourly total
+unit=kg/m^2
+undef=  9.9990e+20
+begin_time=1979/01/01/13
+end_time=2020/07/18/12
+time_interval[hour]=1
+tot_record=364176
+grid_y=155 (lat=  44.4375)
+grid_x=250 (lon= -93.6875)
+elevation[m]=317.942200
+dlat=0.125000
+dlon=0.125000
+ydim(original data set)=224
+xdim(original data set)=464
+start_lat(original data set)=  25.0625
+start_lon(original data set)=-124.9375
+Last_update=Wed Jul 22 15:37:29 2020
+
+Metadata for Requested Time Series:
+
+prod_name=NLDAS_FORA0125_H.002
+param_short_name=APCPsfc
+param_name=Precipitation hourly total
+unit=kg/m^2
+begin_time=2019/05/28/00
+end_time=2019/05/28/23
+begin_time_index=354155
+end_time_index=354178
+lat=  44.4375
+lon= -93.6875
+grid_y=155
+grid_x=250
+tot_record=24
+Request_time=Wed Jul 22 21:40:32 2020
+
+           Date&Time       Data
+      2019-05-28 00Z     0.0000E+00
+      2019-05-28 01Z     0.0000E+00
+      2019-05-28 02Z     0.0000E+00
+      2019-05-28 03Z     0.0000E+00
+      2019-05-28 04Z     0.0000E+00
+      2019-05-28 05Z     0.0000E+00
+      2019-05-28 06Z     0.0000E+00
+      2019-05-28 07Z     1.6400E-02
+      2019-05-28 08Z     0.0000E+00
+      2019-05-28 09Z     0.0000E+00
+      2019-05-28 10Z     0.0000E+00
+      2019-05-28 11Z     0.0000E+00
+      2019-05-28 12Z     0.0000E+00
+      2019-05-28 13Z     0.0000E+00
+      2019-05-28 14Z     0.0000E+00
+      2019-05-28 15Z     0.0000E+00
+      2019-05-28 16Z     0.0000E+00
+      2019-05-28 17Z     0.0000E+00
+      2019-05-28 18Z     0.0000E+00
+      2019-05-28 19Z     0.0000E+00
+      2019-05-28 20Z     0.0000E+00
+      2019-05-28 21Z     0.0000E+00
+      2019-05-28 22Z     0.0000E+00
+      2019-05-28 23Z     0.0000E+00
+MEAN=0.000683

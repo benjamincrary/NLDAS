@@ -6,9 +6,9 @@ param_name=Precipitation hourly total
 unit=kg/m^2
 undef=  9.9990e+20
 begin_time=1979/01/01/13
-end_time=2020/07/10/12
+end_time=2020/07/18/12
 time_interval[hour]=1
-tot_record=363984
+tot_record=364176
 grid_y=110 (lat=  38.8125)
 grid_x=241 (lon= -94.8125)
 elevation[m]=322.697693
@@ -18,7 +18,7 @@ ydim(original data set)=224
 xdim(original data set)=464
 start_lat(original data set)=  25.0625
 start_lon(original data set)=-124.9375
-Last_update=Tue Jul 14 15:44:12 2020
+Last_update=Wed Jul 22 15:37:29 2020
 
 Metadata for Requested Time Series:
 
@@ -35,7 +35,7 @@ lon= -94.8125
 grid_y=110
 grid_x=241
 tot_record=24
-Request_time=Tue Jul 14 19:42:03 2020
+Request_time=Wed Jul 22 21:36:24 2020
 
            Date&Time       Data
       2019-05-28 00Z     0.0000E+00

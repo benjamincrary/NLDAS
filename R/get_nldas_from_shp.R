@@ -8,7 +8,7 @@
 #'
 #' @examples
 get_nldas_from_shp <- function(shapefile, startdate, enddate, parameters, destination) {
-t
+
   #read shapefile
   shp <- import_shapefile(shapefile)
 
@@ -16,7 +16,7 @@ t
   cloud <- create_nldas_point_cloud(shp)
 
   #get NLDAS grid
-  grid <- lookup_nldas_grid(cloud)
+  grid <-
 
   #build queries
   queries <- build_nldas_query(grid, parameters, startdate, enddate, destination)
