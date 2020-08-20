@@ -9,10 +9,10 @@
 #' @examples
 plot_nldas_zones <- function(multi_timeseries_df) {
 
-
+  #create plot directory if it does not exist
   dir.create(paste0(destination, "Plots/"))
 
-#Summarize Total Precip and Plot
+  #Summarize Total Precip and Plot
   totals <- df %>%
     dplyr::group_by(grid, zone, weight) %>%
     dplyr::summarize(total_in = sum(precipitation_in)) %>%

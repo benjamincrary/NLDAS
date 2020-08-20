@@ -4,7 +4,7 @@
 \alias{plot_nldas_zones}
 \title{Title}
 \usage{
-plot_nldas_zones(destination, parameter)
+plot_nldas_zones(multi_timeseries_df)
 }
 \arguments{
 \item{parameter}{}
