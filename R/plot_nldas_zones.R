@@ -12,6 +12,15 @@ plot_nldas_zones <- function(multi_timeseries_df, destination) {
   #create plot directory if it does not exist
   dir.create(paste0(destination, "Plots/"))
 
+
+  ## read zonae maps to join with files
+  zone_map <- read.csv(paste0(destination, parameter, "-zone_map.csv")) %>%
+    dplyr::mutate(grid = paste0(NLDAS_X_Grid, "-", NLDAS_Y_Grid),
+                  zonal_rep = "yes") %>%
+    dplyr::select(zone, grid, zonal_rep)
+  zone_weight <- read.csv(paste0(destination, parameter, "-zone_weight.csv"))
+
+
   #Summarize Total Precip and Plot
   totals <- multi_timeseries_df %>%
     dplyr::group_by(grid, zone, weight) %>%

@@ -28,6 +28,8 @@ gather_all_timeseries <- function(destination, parameter) {
     dplyr::mutate(year = lubridate::year(date_time_local),
                   grid = paste0(NLDAS_X_Grid, "-", NLDAS_Y_Grid))
 
+  write.csv(multi_timeseries_df, paste0(destination, "all_timeseries_df.csv"), row.names=F, quote=F)
+
   return(multi_timeseries_df)
 
 }
