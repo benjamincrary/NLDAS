@@ -17,6 +17,7 @@ Imports:
     sf,
     raster,
     dplyr,
-    magrittr
+    magrittr,
+    ggplot2
 Depends: 
     R (>= 2.10)

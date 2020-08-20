@@ -4,7 +4,12 @@
 \alias{assign_zonal_representative}
 \title{assign_zonal_representatie}
 \usage{
-assign_zonal_representative(shapefile, zone_field, parameter, destination)
+assign_zonal_representative(
+  path_to_shapefile,
+  zone_field,
+  parameter,
+  destination
+)
 }
 \arguments{
 \item{destination}{}
