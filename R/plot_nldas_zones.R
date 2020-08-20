@@ -24,8 +24,8 @@ plot_nldas_zones <- function(destination, parameter) {
     purrr::map_dfr(read_raw_NLDAS_timeseries)
 
   df <- zone_weight %>%
-    left_join(timeseries, by="file") %>%
-    mutate(year = lubridate::year(date_time_local),
+    dplyr::left_join(timeseries, by="file") %>%
+    dplyr::mutate(year = lubridate::year(date_time_local),
            grid = paste0(NLDAS_X_Grid, "-", NLDAS_Y_Grid))
 
 
@@ -39,17 +39,17 @@ plot_nldas_zones <- function(destination, parameter) {
     dplyr::mutate(zonal_rep = tidyr::replace_na(zonal_rep, "no"))
 
 
-  ggplot(totals) +
-    geom_col(aes(x=grid, y=total_in, fill=zonal_rep)) +
-    facet_wrap(zone~., scales="free_x") +
-    scale_fill_manual(values = c("grey70", "firebrick3")) +
-    ylab("precipitation (inches)") +
-    xlab("NLDAS Grid") +
-    ggtitle("NLDAS Grids by Precipiation Zone") +
-    theme_minimal() +
-    theme(axis.text.x = element_text(angle = 90),
+  ggplot2::ggplot(totals) +
+    ggplot2::geom_col(aes(x=grid, y=total_in, fill=zonal_rep)) +
+    ggplot2::facet_wrap(zone~., scales="free_x") +
+    ggplot2::scale_fill_manual(values = c("grey70", "firebrick3")) +
+    ggplot2::ylab("precipitation (inches)") +
+    ggplot2::xlab("NLDAS Grid") +
+    ggplot2::ggtitle("NLDAS Grids by Precipiation Zone") +
+    ggplot2::theme_minimal() +
+    ggplot2::theme(axis.text.x = element_text(angle = 90),
           panel.background = element_rect(color = "grey98", fill = "grey98")) +
-    ggsave(paste0(destination, "Plots/Total_Zonal_Precip_Bar_Chart.pdf"), height = 11, width = 8.5)
+    ggplot2::ggsave(paste0(destination, "Plots/Total_Zonal_Precip_Bar_Chart.pdf"), height = 11, width = 8.5)
 
 
 
@@ -65,16 +65,16 @@ plot_nldas_zones <- function(destination, parameter) {
     dplyr::mutate(zonal_rep = tidyr::replace_na(zonal_rep, "no"))
 
 
-  ggplot(annual_avg) +
-    geom_col(aes(x=grid, y=annual_avg_in, fill=zonal_rep)) +
-    facet_wrap(zone~., scales="free_x") +
-    scale_fill_manual(values = c("grey70", "firebrick3")) +
-    ylab("precipitation (inches)") +
-    xlab("NLDAS Grid") +
-    ggtitle("NLDAS Grids by Precipiation Zone") +
-    theme_minimal() +
-    theme(axis.text.x = element_text(angle = 90),
+  ggplot2::ggplot(annual_avg) +
+    ggplot2::geom_col(aes(x=grid, y=annual_avg_in, fill=zonal_rep)) +
+    ggplot2::facet_wrap(zone~., scales="free_x") +
+    ggplot2::scale_fill_manual(values = c("grey70", "firebrick3")) +
+    ggplot2::ylab("precipitation (inches)") +
+    ggplot2::xlab("NLDAS Grid") +
+    ggplot2::ggtitle("NLDAS Grids by Precipiation Zone") +
+    ggplot2::theme_minimal() +
+    ggplot2::theme(axis.text.x = element_text(angle = 90),
           panel.background = element_rect(color = "grey98", fill = "grey98")) +
-    ggsave(paste0(destination, "Plots/Annual_Avg_Zonal_Precip_Bar_Chart.pdf"), height = 11, width = 8.5)
+    ggplot2::ggsave(paste0(destination, "Plots/Annual_Avg_Zonal_Precip_Bar_Chart.pdf"), height = 11, width = 8.5)
 
 }
