@@ -7,7 +7,7 @@
 #' @export
 #'
 #' @examples
-plot_nldas_zones <- function(multi_timeseries_df, destination) {
+plot_nldas_zones <- function(multi_timeseries_df, destination, parameter) {
 
   #create plot directory if it does not exist
   dir.create(paste0(destination, "Plots/"))
@@ -18,7 +18,6 @@ plot_nldas_zones <- function(multi_timeseries_df, destination) {
     dplyr::mutate(grid = paste0(NLDAS_X_Grid, "-", NLDAS_Y_Grid),
                   zonal_rep = "yes") %>%
     dplyr::select(zone, grid, zonal_rep)
-  zone_weight <- read.csv(paste0(destination, parameter, "-zone_weight.csv"))
 
 
   #Summarize Total Precip and Plot
@@ -56,9 +55,11 @@ plot_nldas_zones <- function(multi_timeseries_df, destination) {
 
 
   ggplot2::ggplot(annual_avg) +
-    ggplot2::geom_col(aes(x=grid, y=annual_avg_in, fill=zonal_rep)) +
+    ggplot2::geom_col(aes(x=grid, y=annual_avg_in, fill=zonal_rep), width = 0.5) +
+    ggplot2::geom_text(aes(x=grid, y=annual_avg_in, label = round(annual_avg_in,1)), size=2, vjust=-0.5) +
     ggplot2::facet_wrap(zone~., scales="free_x") +
     ggplot2::scale_fill_manual(values = c("grey70", "firebrick3")) +
+    ggplot2::scale_y_continuous(limits=c(0, max(annual_avg$annual_avg_in*1.5))) +
     ggplot2::ylab("precipitation (inches)") +
     ggplot2::xlab("NLDAS Grid") +
     ggplot2::ggtitle("NLDAS Grids by Precipiation Zone") +
