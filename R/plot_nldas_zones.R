@@ -1,19 +1,19 @@
 #' Title
 #'
+#' @param multi_timeseries_df
 #' @param destination
-#' @param parameter
 #'
 #' @return
 #' @export
 #'
 #' @examples
-plot_nldas_zones <- function(multi_timeseries_df) {
+plot_nldas_zones <- function(multi_timeseries_df, destination) {
 
   #create plot directory if it does not exist
   dir.create(paste0(destination, "Plots/"))
 
   #Summarize Total Precip and Plot
-  totals <- df %>%
+  totals <- multi_timeseries_df %>%
     dplyr::group_by(grid, zone, weight) %>%
     dplyr::summarize(total_in = sum(precipitation_in)) %>%
     dplyr::left_join(zone_map, by = c("zone", "grid")) %>%
@@ -36,7 +36,7 @@ plot_nldas_zones <- function(multi_timeseries_df) {
 
   #Summarize annaul Average Precip and Plot
 
-  annual_avg <- df %>%
+  annual_avg <- multi_timeseries_df %>%
     dplyr::group_by(grid, year, zone, weight) %>%
     dplyr::summarize(annual_sum_in = sum(precipitation_in)) %>%
     dplyr::ungroup() %>%
