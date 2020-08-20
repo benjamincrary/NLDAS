@@ -7,10 +7,7 @@
 #' @export
 #'
 #' @examples
-plot_nldas_zones <- function(destination, parameter) {
-
-
- df <- gather_all_timeseries(destination, parameter)
+plot_nldas_zones <- function(multi_timeseries_df) {
 
 
   dir.create(paste0(destination, "Plots/"))

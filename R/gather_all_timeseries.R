@@ -23,9 +23,11 @@ gather_all_timeseries <- function(destination, parameter) {
   timeseries <- file_list %>%
     purrr::map_dfr(read_raw_NLDAS_timeseries)
 
-  df <- zone_weight %>%
+  multi_timeseries_df <- zone_weight %>%
     dplyr::left_join(timeseries, by="file") %>%
     dplyr::mutate(year = lubridate::year(date_time_local),
                   grid = paste0(NLDAS_X_Grid, "-", NLDAS_Y_Grid))
+
+  return(multi_timeseries_df)
 
 }
