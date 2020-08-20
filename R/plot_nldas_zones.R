@@ -31,6 +31,7 @@ plot_nldas_zones <- function(destination, parameter) {
     dplyr::left_join(zone_map, by = c("zone", "grid")) %>%
     dplyr::mutate(zonal_rep = tidyr::replace_na(zonal_rep, "no"))
 
+  dir.create(paste0(destination, "Plots/"))
 
   ggplot(totals) +
     geom_col(aes(x=grid, y=total_in, fill=zonal_rep)) +
@@ -41,7 +42,8 @@ plot_nldas_zones <- function(destination, parameter) {
     ggtitle("NLDAS Grids by Precipiation Zone") +
     theme_minimal() +
     theme(axis.text.x = element_text(angle = 90),
-          panel.background = element_rect(color = "grey98", fill = "grey98"))
+          panel.background = element_rect(color = "grey98", fill = "grey98")) +
+    ggsave(paste0(destination, "Plots/Zonal_Bar_Chart.pdf"), height = 11, width = 8.5)
 
 
 }
