@@ -2,13 +2,12 @@
 # NLDAS
 
 <!-- badges: start -->
-<!-- badges: end -->ins
+<!-- badges: end -->
 
 The goal of NLDAS is to query NLDAS data rods. 
 
 ## Installation
 
-You can install the released version of NLDAS from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 devtools::install.github("benjamincrary/NLDAS")
