@@ -2,7 +2,7 @@
 # NLDAS
 
 <!-- badges: start -->
-<!-- badges: end -->ins
+<!-- badges: end -->
 
 The goal of NLDAS is to query NLDAS data rods. 
 
