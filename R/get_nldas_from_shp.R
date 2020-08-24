@@ -16,7 +16,7 @@ get_nldas_from_shp <- function(shapefile, startdate, enddate, parameters, destin
   cloud <- create_nldas_point_cloud(shp)
 
   #get NLDAS grid
-  grid <-
+  grid <- lookup_nldas_grid(cloud)
 
   #build queries
   queries <- build_nldas_query(grid, parameters, startdate, enddate, destination)
