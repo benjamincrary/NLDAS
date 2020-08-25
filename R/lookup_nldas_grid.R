@@ -36,9 +36,11 @@ lookup_nldas_grid <- function(point_cloud) {
     sf::st_coordinates()
 
   xpoints <- data.frame(Longitude = nldas_shp[,1]) %>% dplyr::left_join(nldas_long_grid, by="Longitude") %>% dplyr::select("NLDAS_X_Grid") %>% rename("xpoints" = "NLDAS_X_Grid")
+  x_long <- data.frame(Longitude = nldas_shp[,1]) %>% dplyr::left_join(nldas_long_grid, by="Longitude") %>% dplyr::select("Longitude")
   ypoints <- data.frame(Latitude = nldas_shp[,2]) %>% dplyr::left_join(nldas_lat_grid, by = "Latitude") %>% dplyr::select("NLDAS_Y_Grid") %>% rename("ypoints" = "NLDAS_Y_Grid")
+  y_long <- data.frame(Latitude = nldas_shp[,2]) %>% dplyr::left_join(nldas_lat_grid, by = "Latitude") %>% dplyr::select("Latitude")
 
-  grid <- dplyr::distinct(data.frame(xpoints = xpoints, ypoints = ypoints))
+  grid <- dplyr::distinct(data.frame(xpoints = xpoints, ypoints = ypoints, x_long = x_long, y_long = y_long))
 
   return(grid)
 
